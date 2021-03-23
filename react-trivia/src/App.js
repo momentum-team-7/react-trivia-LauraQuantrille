@@ -6,8 +6,8 @@ function App () {
   const [categories, setCategories] = useState([])
   useEffect(() => {
     console.log('categories runs', categories)
-    axios.get('https://opentdb.com/api.php?amount=10').then((response) => {
-      setCategories(response.data.results)
+    axios.get('https://opentdb.com/api_category.php').then((response) => {
+      setCategories(response.data.trivia_categories)
     })
   }, [])
   console.log('RENDERING:', categories)
@@ -17,7 +17,7 @@ function App () {
       <h1>Category is...</h1>
       <ul>
         {categories.map((category, index) => (
-          <li key={index}>{category.category}</li>
+          <li key={index}>{category.name}</li>
         ))}
       </ul>
 
