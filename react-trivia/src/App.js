@@ -20,21 +20,21 @@ function App () {
     <div>
       <h1>Trivia Game</h1>
       {selectedCategory ? (
-        <CategoryQuestions category={selectedCategory} 
+        <CategoryQuestions 
+        category={selectedCategory} 
         handleGoBack={() => setSelectedCategory(null)}
           />
       ) : (
-      <CategoryList 
-        categories={categories}
-        setSelectedCategory={setSelectedCategory}
+        <CategoryList
+          categories={categories}
+          setSelectedCategory={setSelectedCategory}
 
-        
-       />
-       
-       )}
+        />
+      )}
     </div>
 
-    )
+  )
 }
 
 export default App
+
