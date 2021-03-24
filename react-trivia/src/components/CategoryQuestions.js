@@ -30,12 +30,14 @@ export default function CategoryQuestions({ category, handleGoBack }) {
         Back to all categories
       </button>
       <ul>
-        {categoryQuestions.map((dataByCategory) =>
-          <li key={dataByCategory.id}>{dataByCategory.question}
+        {categoryQuestions.map((dataByCategory, index) =>
+          <li key={index}>{dataByCategory.question}
             <dl>
                 <dt>Choose Your Answer</dt>
                 <dd>{dataByCategory.correct_answer}</dd>
                 <dd>{dataByCategory.incorrect_answers.[0]}</dd>
+                <dd>{dataByCategory.incorrect_answers.[1]}</dd>
+                <dd>{dataByCategory.incorrect_answers.[2]}</dd>
             
             </dl>
           </li>
