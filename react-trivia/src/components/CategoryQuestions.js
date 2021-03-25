@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import he from 'he'
+import Question from './Question'
 
 export default function CategoryQuestions({ category, handleGoBack }) {
   const [categoryQuestions, setCategoryQuestions] = useState([])
   useEffect(() => {
     axios
-      .get(`https://opentdb.com/api.php?amount=${category.id}`)
+      .get(`https://opentdb.com/api.php?amount=10${category.id}&type=multiple`)
       .then((response) => {
         console.log(response.data.results)
         const data = response.data.results.map((dataByCategory) => ({
@@ -32,18 +33,12 @@ export default function CategoryQuestions({ category, handleGoBack }) {
       </button>
       <ul>
         {categoryQuestions.map((dataByCategory, index) =>
-          <li key={index}>{he.decode(dataByCategory.question)}
-            <div className='answer-wrapper'>
-              <dl>
-                <dt>Choose Your Answer</dt>
-                <button><dd>{he.decode(dataByCategory.correct_answer)}</dd></button>
-                {dataByCategory.incorrect_answers.map((incorrect_answer, index) =>
-                  (
-                    <button key={index}><dd>{he.decode(incorrect_answer)}</dd></button>
-                  ))}
-              </dl>
-            </div>
-          </li>
+          <Question 
+            question ={dataByCategory.question}
+            incorrect_answers={dataByCategory.incorrect_answers}
+            corect_answer={dataByCategory.correct_answer}
+
+          />
         )}
       </ul>
     </div>
