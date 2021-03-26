@@ -5,7 +5,7 @@ import Answer from './Answers'
 export default function Question ({ question, incorrect_answers, correct_answer }) {
   return (
         <div>
-            <li key={index}>{he.decode(question)}
+            <li>{he.decode(question)}
             <div className='answer-wrapper'>
               <dl>
                 <dt>Choose Your Answer</dt>

@@ -36,7 +36,7 @@ export default function CategoryQuestions({ category, handleGoBack }) {
           <Question 
             question ={dataByCategory.question}
             incorrect_answers={dataByCategory.incorrect_answers}
-            corect_answer={dataByCategory.correct_answer}
+            correct_answer={dataByCategory.correct_answer}
 
           />
         )}
