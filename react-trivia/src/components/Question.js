@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import he from 'he'
 import Answer from './Answers'
+import '../App.css'
 
 export default function Question ({ question, incorrect_answers, correct_answer }) {
+    const [correct, setCorrect] = useState(null)
+    const [incorrect, setIncorrect] = useState(null)
   return (
-        <div>
+        <div className={correct ? 'greenCorrect' : 'noChoice'}>
             <li>{he.decode(question)}
             <div className='answer-wrapper'>
               <dl>
@@ -12,15 +15,12 @@ export default function Question ({ question, incorrect_answers, correct_answer 
                 <Answer
                     correct_answer={correct_answer}
                     incorrect_answers={incorrect_answers}
+                    setCorrect={setCorrect}
+                    setIncorrect={setIncorrect}
                 />
-                {/* <button><dd>{he.decode(correct_answer)}</dd></button>
-                {incorrect_answers.map((incorrect_answer, index) =>
-                  (
-                    <button key={index}><dd>{he.decode(incorrect_answer)}</dd></button>
-                  ))} */}
               </dl>
             </div>
-          </li>
+            </li>
         </div>
   )
 }
