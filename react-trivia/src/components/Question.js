@@ -4,8 +4,7 @@ import Answer from './Answers'
 import '../App.css'
 
 export default function Question ({ question, incorrect_answers, correct_answer }) {
-    const [correct, setCorrect] = useState(null)
-    const [incorrect, setIncorrect] = useState(null)
+    const [correct, setCorrect] = useState(false)
   return (
         <div className={correct ? 'greenCorrect' : 'noChoice'}>
             <li>{he.decode(question)}
@@ -16,7 +15,6 @@ export default function Question ({ question, incorrect_answers, correct_answer 
                     correct_answer={correct_answer}
                     incorrect_answers={incorrect_answers}
                     setCorrect={setCorrect}
-                    setIncorrect={setIncorrect}
                 />
               </dl>
             </div>

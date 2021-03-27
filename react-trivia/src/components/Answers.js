@@ -2,20 +2,31 @@ import React from 'react'
 import he from 'he'
 import shuffle from 'lodash/shuffle'
 
-export default function Answer ({correct_answer, incorrect_answers, setCorrect, setIncorrect}) {
+export default function Answer ({correct_answer, incorrect_answers, setCorrect}) {
+    // const [selectedAnswer, setSelectedAnswer] = useState('')
     const _ = require('lodash')
     let answers = [
         ...incorrect_answers, correct_answer
     ];
     const shuffledAnswers = _.shuffle(answers)
+    const uniqueId = Math.random();
     return (
         <div>
           {shuffledAnswers.map((answer, index) => { 
               return(
             <>      
-            <input value={he.decode(answer)} key={index} id='answers' type='radio' onChange={(event) => console.log(event.target.value)} />
+            <input
+                value={he.decode(answer)}
+                key={index}
+                id='answers'
+                type='radio'
+                name={uniqueId}
+                onChange={() => answer === correct_answer ? setCorrect(true) : setCorrect(false)} 
+                
+                
+            />
             
-            <label for='answers'>{he.decode(answer)}</label>
+            <label htmlFor='answers'>{he.decode(answer)}</label>
 
             </>
             )

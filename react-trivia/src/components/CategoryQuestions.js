@@ -6,6 +6,7 @@ import Question from './Question'
 
 export default function CategoryQuestions({ category, handleGoBack }) {
   const [categoryQuestions, setCategoryQuestions] = useState([])
+
   useEffect(() => {
     axios
       .get(`https://opentdb.com/api.php?amount=10&category=${category.id}&type=multiple`)
