@@ -1,12 +1,12 @@
 export default function CategoryList({ categories, setSelectedCategory }) {
   return (
-    <div className='App'>
+    <>
       <h1>Category is...</h1>
-      <ul>
+      <ul className='category-container'>
         {categories.map((category, index) => (
-          <li key={index}>
+          <li className='category' key={index}>
             <button
-              className='pa0 bw0 bg-white blue pointer underline-hover'
+              className='category__button'
               onClick={() => setSelectedCategory(category)}
             >
               {category.name}
@@ -14,6 +14,6 @@ export default function CategoryList({ categories, setSelectedCategory }) {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   )
 }

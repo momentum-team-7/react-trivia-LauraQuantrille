@@ -26,14 +26,14 @@ export default function CategoryQuestions({ category, handleGoBack }) {
   }, [category])
 
   return (
-    <div>
-      <h3>{category.name} Questions</h3>
+    <div className='trivia'>
       <button
-        className='pa0 bw0 bg-white blue pointer underline-hover'
+        className='trivia__button-back'
         onClick={handleGoBack}>
         Back to all categories
       </button>
-      <ul>
+      <h3 className='trivia__header'>{category.name} Questions</h3>
+      <ul className='trivia__content'>
         {categoryQuestions.map((dataByCategory, index) =>
           <Question 
             question ={dataByCategory.question}

@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import CategoryList from './components/CategoryList'
 import CategoryQuestions from './components/CategoryQuestions'
-import 'tachyons'
-// import './App.css';
+
+import './App.css';
 
 function App () {
   const [categories, setCategories] = useState([])

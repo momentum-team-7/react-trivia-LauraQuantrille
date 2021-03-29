@@ -37,6 +37,84 @@
   }
 } */
 
+body {
+  background: rgb(252, 255, 234);
+  padding: 30px;
+  font-family: 'Courier', Courier, monospace;
+}
+
+.category-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  background: rgb(112, 245, 234);
+  padding: 5px; 
+  border-radius: 10px;
+}
+
+.category {
+  margin: 0;
+  padding: 5px; 
+}
+
+.category__button {
+  padding: 20px;
+  background: rgb(214, 255, 252);
+  color: pink;
+  border: 0;
+  font-size: 18px;
+  font-style: italic;
+  border-radius: 10px;
+}
+
+.category__button:hover {
+  color: rgb(214, 255, 252);
+  background: pink;
+}
+
+.trivia {
+  padding: 10px;
+  background: rgb(161, 236, 255);
+  border-radius: 10px;
+}
+
+.trivia__header {
+  padding: 5px;
+  background: pink;
+  color: rgb(51, 28, 255);
+  border-radius: 10px;
+}
+
+.trivia__button-back {
+  padding: 10px;
+  background: rgb(250, 254, 255);
+  color: pink;
+  border: 0;
+  font-size: 18px;
+  font-style: italic;
+  border-radius: 10px;
+}
+
+.trivia__content {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.question {
+  border: 3px solid pink;
+  border-radius: 10px;
+  list-style: none;
+  padding: 40px;
+  margin: 0 0 10px 0;
+}
+
+.question__answer-wrapper {
+}
+
 .greenCorrect {
   background-color: #00ff0080;
 }
